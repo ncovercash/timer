@@ -62,5 +62,5 @@ a:not(.chip):not(.btn) {
 
 #timer-page h1, #timer-page h5 {
 	margin: 0;
-	overflow-wrap: break-word; // allow times to overflow line-height-wise
+	overflow-wrap: break-word; /* allow times to overflow line-height-wise */
 }
