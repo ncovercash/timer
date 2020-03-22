@@ -13,11 +13,15 @@ a:not(.chip):not(.btn) {
 	text-decoration: underline;
 }
 
-.flow-text:first-of-type {
+.flow-text:first-of-type, .no-bottom-margin {
 	margin-bottom: 0;
 }
-.flow-text:not(:first-of-type) {
+.flow-text:not(:first-of-type), .no-margin {
 	margin: 0;
+}
+
+.flow-text > span {
+	vertical-align: middle;
 }
 
 #num-minutes {
