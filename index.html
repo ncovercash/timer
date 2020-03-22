@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Timer</title>
+
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+		<link rel="stylesheet" href="css.css">
+
+		<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1.0" name="viewport" />
+	</head>
+	<body>
+		<div class="container">
+			<div id="start-page">
+				<h4>Minutes:</h4>
+
+				<form class="row" action="#" id="custom-minutes-form"><!-- form for lazy validation -->
+					<div class="input-field col s12">
+						<input type="number" min="0" step="1" id="num-minutes" required="required">
+						<label for="num-minutes"></label>
+					</div>
+					<button type="submit" href="#" class="btn" id="start-btn">START</button>
+				</form>
+
+				<p class="flow-text">
+					<span style="font-weight: bold;">Common times:</span>
+					<a class="chip white black-text" href="javascript:startTimer(5)">5m</a>
+					<a class="chip white black-text" href="javascript:startTimer(10)">10m</a>
+					<a class="chip white black-text" href="javascript:startTimer(15)">15m</a>
+					<a class="chip white black-text" href="javascript:startTimer(30)">30m</a>
+					<a class="chip white black-text" href="javascript:startTimer(45)">45m</a>
+					<a class="chip white black-text" href="javascript:startTimer(60)">1h</a>
+					<a class="chip white black-text" href="javascript:startTimer(75)">1h 15m</a>
+					<a class="chip white black-text" href="javascript:startTimer(80)">1h 20m</a>
+					<a class="chip white black-text" href="javascript:startTimer(90)">1h 30m</a>
+					<a class="chip white black-text" href="javascript:startTimer(105)">1h 45m</a>
+				</p>
+				<p class="flow-text">
+					<span style="font-weight: bold;">SAT:</span>
+					<a class="chip white black-text" href="javascript:startTimer(65)">Reading (65m)</a>
+					<a class="chip white black-text" href="javascript:startTimer(10)">Break 1 (10m)</a>
+					<a class="chip white black-text" href="javascript:startTimer(35)">Writing (35m)</a>
+					<a class="chip white black-text" href="javascript:startTimer(25)">Math Non-Calculator (25m)</a>
+					<a class="chip white black-text" href="javascript:startTimer(5)">Break 2 (5m)</a>
+					<a class="chip white black-text" href="javascript:startTimer(55)">Math Calculator (55m)</a>
+					<a class="chip white black-text" href="javascript:startTimer(5)">Break 3 (5m)</a>
+					<a class="chip white black-text" href="javascript:startTimer(50)">Essay (50m)</a>
+				</p>
+				<p class="flow-text">
+					<span style="font-weight: bold;">ACT:</span>
+					<a class="chip white black-text" href="javascript:startTimer(45)">English (45m)</a>
+					<a class="chip white black-text" href="javascript:startTimer(60)">Mathematics (60m)</a>
+					<a class="chip white black-text" href="javascript:startTimer(10)">Break 1 (10m)</a>
+					<a class="chip white black-text" href="javascript:startTimer(35)">Reading (35m)</a>
+					<a class="chip white black-text" href="javascript:startTimer(35)">Science (35m)</a>
+					<a class="chip white black-text" href="javascript:startTimer(5)">Break 2 (5m)</a>
+					<a class="chip white black-text" href="javascript:startTimer(40)">Writing (40m)</a>
+				</p>
+				<p class="flow-text" id="recent-chip-container">
+					<span style="font-weight: bold;">Recent:</span>
+				</p>
+
+				<p><i>Questions?  Suggestions?  Comments?  Drop me an e-mail at <a href="mailto:me@ncovercash.dev">me (at) ncovercash (dot) dev</a> and I'll do my best to answer!</i></p>
+			</div>
+			<div id="timer-page" class="center hide">
+				<h5 class="no-bottom-margin" id="current-time-label">Current Time</h5>
+				<h1 class="no-top-margin" id="current-time">--:--</h1>
+
+				<h5 class="no-bottom-margin" id="bottom-area-label">End Time</h5>
+				<h1 class="no-top-margin" id="bottom-area-value">--:--</h1>
+			</div>
+		</div>
+		<div id="toolbox" class="hide">
+			<i class="material-icons medium" id="play-pause-icon">pause</i>
+			<i class="material-icons medium" id="show-time-icon">access_time</i>
+			<i class="material-icons medium" id="exit-icon">clear</i>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script type="text/javascript" src="main.js"></script>

@@ -1,0 +1,66 @@
+body {
+	color: #ffffff;
+	background-color: #1b5e20;
+}
+
+h4 {
+	margin-bottom: 0;
+}
+
+a:not(.chip):not(.btn) {
+	color: #ffffff;
+	font-weight: bolder;
+	text-decoration: underline;
+}
+
+.flow-text:first-of-type {
+	margin-bottom: 0;
+}
+.flow-text:not(:first-of-type) {
+	margin: 0;
+}
+
+#num-minutes {
+	font-size: 5rem;
+	height: 6rem;
+	color: #ffffff;
+	border-bottom: 1px solid #ffffff;
+	-webkit-box-shadow: 0 1px 0 0 #ffffff;
+	box-shadow: 0 1px 0 0 #ffffff;
+}
+
+#num-minutes:focus {
+	border-bottom: 2px solid #ffffff;
+	-webkit-box-shadow: 0 2px 0 0 #ffffff;
+	box-shadow: 0 2px 0 0 #ffffff;
+	transition: border-bottom 400ms, box-shadow 400ms, -webkit-box-shadow 400ms;
+}
+
+#num-minutes:focus + label {
+	color: #ffffff;
+	transition: color 400ms;
+}
+
+#start-btn {
+	background-color: #ffffff;
+	color: #1b5e20;
+	height: 5rem;
+	padding: 0 1em;
+	font-size: 200%;
+	line-height: 5rem;
+}
+
+#toolbox {
+	bottom: 0;
+	position: absolute;
+	right: 0;
+}
+
+#toolbox i {
+	cursor: pointer;
+}
+
+#timer-page h1, #timer-page h5 {
+	margin: 0;
+	overflow-wrap: break-word; // allow times to overflow line-height-wise
+}
