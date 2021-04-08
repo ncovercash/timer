@@ -128,7 +128,10 @@ let tick = () => {
 	timerPage.currentTime.innerText = h + ":" + m;
 
 	if (toolbox.endTime.state) {
-		let h = String(endTime.getHours());
+		let h = String(endTime.getHours()) % 12;
+		if (h == "0") {
+			h = "12";
+		}
 		let m = String(endTime.getMinutes());
 		if (m.length == 1) {
 			m = "0" + m;
