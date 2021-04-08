@@ -120,20 +120,23 @@ let tick = () => {
 		timerPage.page.style.color = "#f44336";
 	}
 
-	let h = String(now.getHours());
+	let h = String(now.getHours() % 12);
+	if (h === "0") {
+		h = "12";
+	}
 	let m = String(now.getMinutes());
-	if (m.length == 1) {
+	if (m.length === 1) {
 		m = "0" + m;
 	}
 	timerPage.currentTime.innerText = h + ":" + m;
 
 	if (toolbox.endTime.state) {
-		let h = String(endTime.getHours()) % 12;
-		if (h == "0") {
+		let h = String(endTime.getHours() % 12);
+		if (h === "0") {
 			h = "12";
 		}
 		let m = String(endTime.getMinutes());
-		if (m.length == 1) {
+		if (m.length === 1) {
 			m = "0" + m;
 		}
 
