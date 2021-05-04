@@ -117,7 +117,8 @@ let tick = () => {
 
 	let now = new Date();
 	if (now.getTime() >= endTime.getTime()) {
-		timerPage.page.style.color = "#f44336";
+		timerPage.page.style.color = "#1b5e20";
+		timerPage.page.style.backgroundColor = "#ffffff";
 	}
 
 	let h = String(now.getHours() % 12);
