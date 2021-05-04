@@ -19,6 +19,8 @@ let toolbox = {
 		falseIcon: "pause",
 		trueColor: "#ffffff",
 		falseColor: "#ffffff",
+		trueDarkColor: "#1b5e20",
+		falseDarkColor: "#1b5e20",
 		element: document.getElementById("play-pause-icon")
 	},
 	endTime: {
@@ -27,6 +29,8 @@ let toolbox = {
 		falseIcon: "access_time",
 		trueColor: "#ffffff",
 		falseColor: "#aaaaaa",
+		trueDarkColor: "#002200",
+		falseDarkColor: "#1b5e20",
 		element: document.getElementById("show-time-icon")
 	},
 	exit: {
@@ -35,12 +39,14 @@ let toolbox = {
 		falseIcon: "clear",
 		trueColor: "#ffffff",
 		falseColor: "#ffffff",
+		trueDarkColor: "#1b5e20",
+		falseDarkColor: "#1b5e20",
 		element: document.getElementById("exit-icon")
 	},
 	set: (obj, state) => {
 		obj.state = state;
 		obj.element.innerText = state ? obj.trueIcon : obj.falseIcon;
-		obj.element.style.color = state ? obj.trueColor : obj.falseColor;
+		obj.element.style.color = state ? (document.body.classList.contains("end") ? obj.trueDarkColor : obj.trueColor) : (document.body.classList.contains("end") ? obj.falseDarkColor : obj.falseColor);
 	}
 };
 
@@ -117,8 +123,10 @@ let tick = () => {
 
 	let now = new Date();
 	if (now.getTime() >= endTime.getTime()) {
-		timerPage.page.style.color = "#1b5e20";
-		timerPage.page.style.backgroundColor = "#ffffff";
+		document.body.classList.add("end");
+		toolbox.set(toolbox.pause, toolbox.pause.state);
+		toolbox.set(toolbox.exit, toolbox.exit.state);
+		toolbox.set(toolbox.endTime, toolbox.endTime.state);
 	}
 
 	let h = String(now.getHours() % 12);
@@ -191,7 +199,7 @@ let startTimer = (min) => {
 
 	startPage.page.classList.add("hide");
 	timerPage.page.classList.remove("hide");
-	timerPage.page.style.color = "#ffffff";
+	// timerPage.page.style.color = "#ffffff";
 	toolbox.container.classList.remove("hide");
 
 	toolbox.set(toolbox.pause, false);
@@ -231,6 +239,8 @@ let displayRemaining = () => {
 let exitTimer = () => {
 	clearTimeout(tickTimeout);
 	updateRecentChips();
+
+	document.body.classList.remove("end");
 
 	startPage.page.classList.remove("hide");
 	timerPage.page.classList.add("hide");

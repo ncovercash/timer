@@ -3,6 +3,11 @@ body {
 	background-color: #1b5e20;
 }
 
+body.end {
+	color: #1b5e20;
+	background-color: #ffffff;
+}
+
 h4 {
 	margin-bottom: 0;
 }
@@ -11,6 +16,9 @@ a:not(.chip):not(.btn) {
 	color: #ffffff;
 	font-weight: bolder;
 	text-decoration: underline;
+}
+.end a:not(.chip):not(.btn) {
+	color: #000000;
 }
 
 .flow-text:first-of-type, .no-bottom-margin {
