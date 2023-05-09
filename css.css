@@ -74,8 +74,40 @@ a:not(.chip):not(.btn) {
   cursor: pointer;
 }
 
-#timer-page h1,
-#timer-page h5 {
+#timer-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
+
+  --size: 1px;
+}
+
+#timer-page span {
   margin: 0;
   overflow-wrap: break-word; /* allow times to overflow line-height-wise */
+  line-height: 1em;
+}
+
+#clock-mode-button-wrapper {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
+
+#clock-mode-button {
+  background: #ffffff44;
+  color: white;
+  transition: background-color 300ms ease-in-out;
+  border: 0;
+  border-top-left-radius: 2rem;
+  height: 4rem;
+  width: 14ch;
+  cursor: pointer;
+}
+
+#clock-mode-button:hover,
+#clock-mode-button:focus {
+  background: #ffffff66;
 }
