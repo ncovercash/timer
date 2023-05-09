@@ -1,78 +1,81 @@
 body {
-	color: #ffffff;
-	background-color: #1b5e20;
+  color: #ffffff;
+  background-color: #1b5e20;
 }
 
 body.end {
-	color: #1b5e20;
-	background-color: #ffffff;
+  color: #1b5e20;
+  background-color: #ffffff;
 }
 
 h4 {
-	margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 a:not(.chip):not(.btn) {
-	color: #ffffff;
-	font-weight: bolder;
-	text-decoration: underline;
+  color: #ffffff;
+  font-weight: bolder;
+  text-decoration: underline;
 }
 .end a:not(.chip):not(.btn) {
-	color: #000000;
+  color: #000000;
 }
 
-.flow-text:first-of-type, .no-bottom-margin {
-	margin-bottom: 0;
+.flow-text:first-of-type,
+.no-bottom-margin {
+  margin-bottom: 0;
 }
-.flow-text:not(:first-of-type), .no-margin {
-	margin: 0;
+.flow-text:not(:first-of-type),
+.no-margin {
+  margin: 0;
 }
 
 .flow-text > span {
-	vertical-align: middle;
+  vertical-align: middle;
 }
 
 #num-minutes {
-	font-size: 5rem;
-	height: 6rem;
-	color: #ffffff;
-	border-bottom: 1px solid #ffffff;
-	-webkit-box-shadow: 0 1px 0 0 #ffffff;
-	box-shadow: 0 1px 0 0 #ffffff;
+  font-size: 5rem;
+  height: 6rem;
+  color: #ffffff;
+  border-bottom: 1px solid #ffffff;
+  -webkit-box-shadow: 0 1px 0 0 #ffffff;
+  box-shadow: 0 1px 0 0 #ffffff;
 }
 
 #num-minutes:focus {
-	border-bottom: 2px solid #ffffff;
-	-webkit-box-shadow: 0 2px 0 0 #ffffff;
-	box-shadow: 0 2px 0 0 #ffffff;
-	transition: border-bottom 400ms, box-shadow 400ms, -webkit-box-shadow 400ms;
+  border-bottom: 2px solid #ffffff;
+  -webkit-box-shadow: 0 2px 0 0 #ffffff;
+  box-shadow: 0 2px 0 0 #ffffff;
+  transition: border-bottom 400ms, box-shadow 400ms, -webkit-box-shadow 400ms;
 }
 
 #num-minutes:focus + label {
-	color: #ffffff;
-	transition: color 400ms;
+  color: #ffffff;
+  transition: color 400ms;
 }
 
 #start-btn {
-	background-color: #ffffff;
-	color: #1b5e20;
-	height: 5rem;
-	padding: 0 1em;
-	font-size: 200%;
-	line-height: 5rem;
+  background-color: #ffffff;
+  color: #1b5e20;
+  height: 5rem;
+  padding: 0 1em;
+  font-size: 200%;
+  line-height: 5rem;
 }
 
 #toolbox {
-	bottom: 0;
-	position: absolute;
-	right: 0;
+  bottom: 0;
+  position: absolute;
+  right: 0;
 }
 
 #toolbox i {
-	cursor: pointer;
+  cursor: pointer;
 }
 
-#timer-page h1, #timer-page h5 {
-	margin: 0;
-	overflow-wrap: break-word; /* allow times to overflow line-height-wise */
+#timer-page h1,
+#timer-page h5 {
+  margin: 0;
+  overflow-wrap: break-word; /* allow times to overflow line-height-wise */
 }
