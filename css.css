@@ -87,7 +87,7 @@ a:not(.chip):not(.btn) {
 #timer-page span {
   margin: 0;
   overflow-wrap: break-word; /* allow times to overflow line-height-wise */
-  line-height: 1em;
+  line-height: 1.2em;
 }
 
 #clock-mode-button-wrapper {

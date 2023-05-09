@@ -196,6 +196,12 @@ let tick = () => {
       let remainingMin = (endTime.getTime() - now.getTime()) / 60000;
       timerPage.bottomValue.innerText = Math.ceil(remainingMin);
     }
+  } else {
+    timerPage.bottomLabel.innerText = Intl.DateTimeFormat("en-US", {
+      weekday: "long",
+      month: "long",
+      day: "numeric",
+    }).format(now);
   }
 
   tickTimeout = setTimeout(tick, 1000);
@@ -243,7 +249,6 @@ let startTimer = (min) => {
   toolbox.exit.element.classList.remove("hide");
   toolbox.exitClock.element.classList.add("hide");
 
-  timerPage.bottomLabel.classList.remove("hide");
   timerPage.bottomValue.classList.remove("hide");
 
   let now = new Date();
@@ -273,7 +278,6 @@ let showClock = () => {
   toolbox.exit.element.classList.add("hide");
   toolbox.exitClock.element.classList.remove("hide");
 
-  timerPage.bottomLabel.classList.add("hide");
   timerPage.bottomValue.classList.add("hide");
 
   startPage.page.classList.add("hide");
