@@ -46,13 +46,15 @@ let toolbox = {
   set: (obj, state) => {
     obj.state = state;
     obj.element.innerText = state ? obj.trueIcon : obj.falseIcon;
-    obj.element.style.color = state
-      ? document.body.classList.contains("end")
+    if (state) {
+      obj.element.style.color = document.body.classList.contains("end")
         ? obj.trueDarkColor
-        : obj.trueColor
-      : document.body.classList.contains("end")
-      ? obj.falseDarkColor
-      : obj.falseColor;
+        : obj.trueColor;
+    } else {
+      obj.element.style.color = document.body.classList.contains("end")
+        ? obj.falseDarkColor
+        : obj.falseColor;
+    }
   },
 };
 
@@ -95,7 +97,7 @@ let addRecentChip = (min) => {
 };
 let updateRecentChips = () => {
   let existingItems = startPage.recentChips.getElementsByTagName("a");
-  for (var i = existingItems.length - 1; i >= 0; i--) {
+  for (let i = existingItems.length - 1; i >= 0; i--) {
     existingItems[i].remove();
   }
 
@@ -107,11 +109,11 @@ let updateRecentChips = () => {
   let chip = document.createElement("a");
   chip.className = "chip white black-text";
 
-  for (var i = 0; i < recents.length; i++) {
-    chip.href = "javascript:startTimer(" + recents[i] + ")";
+  for (const element of recents) {
+    chip.href = "javascript:startTimer(" + element + ")";
 
-    let h = Math.floor(recents[i] / 60);
-    let m = recents[i] % 60;
+    let h = Math.floor(element / 60);
+    let m = element % 60;
     let str = "";
     if (h) {
       str += h;
@@ -227,7 +229,6 @@ let startTimer = (min) => {
 
   startPage.page.classList.add("hide");
   timerPage.page.classList.remove("hide");
-  // timerPage.page.style.color = "#ffffff";
   toolbox.container.classList.remove("hide");
 
   toolbox.set(toolbox.pause, false);
@@ -254,7 +255,7 @@ let resumeTimer = () => {
   let delta = new Date().getTime() - pauseAt;
   endTime = new Date(endTime.getTime() + delta);
   timerPage.page.style.color = "#ffffff";
-  tickTimout = setTimeout(tick, 0);
+  setTimeout(tick, 0);
 };
 let displayEndTime = () => {
   timerPage.bottomLabel.innerText = "End Time";
@@ -296,10 +297,9 @@ startPage.inputForm.addEventListener("submit", (e) => {
 
   if (Number.isNaN(value)) {
     alert("Invalid number");
-    return false;
+  } else {
+    startTimer(value);
   }
-
-  startTimer(value);
 
   return false;
 });
