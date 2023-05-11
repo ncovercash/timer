@@ -219,14 +219,14 @@ let realResize = () => {
         timerPage.currentTime.offsetHeight +
         timerPage.bottomLabel.offsetHeight +
         timerPage.bottomValue.offsetHeight >
-        window.innerHeight - 32 ||
+        window.innerHeight * 0.9 ||
       Math.max(
         timerPage.currentTimeLabel.offsetWidth,
         timerPage.currentTime.offsetWidth,
         timerPage.bottomLabel.offsetWidth,
         timerPage.bottomValue.offsetWidth
       ) >
-        window.innerWidth - 32
+        window.innerWidth * 0.9
     ) {
       upperBound = Math.floor((lowerBound + upperBound) / 2);
     } else {
@@ -276,7 +276,7 @@ let showClock = () => {
   toolbox.pause.element.classList.add("hide");
   toolbox.endTime.element.classList.add("hide");
   toolbox.exit.element.classList.add("hide");
-  toolbox.exitClock.element.classList.remove("hide");
+  toolbox.exitClock.element.classList.add("hide");
 
   timerPage.bottomValue.classList.add("hide");
 
